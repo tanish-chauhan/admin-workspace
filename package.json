@@ -28,12 +28,11 @@
   },
   "lint-staged": {
     "*.{ts,html,scss}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ]
   },
   "config": {
-    "commitzen": {
+    "commitizen": {
       "path": "cz-customizable"
     }
   },
@@ -69,3 +68,4 @@
     "typescript": "~5.5.2"
   }
 }
+
