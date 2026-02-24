@@ -17,7 +17,7 @@
     "prerelease:major": "npm version major && git push --follow-tags",
     "publish": "npm run build:admin-kit && cd dist/admin-kit && npm publish --access public"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^18.1.0",
     "@angular/common": "^18.1.0",
