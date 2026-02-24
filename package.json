@@ -5,12 +5,17 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:admin-kit": "ng build admin-kit",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prepare": "husky",
     "lint": "ng lint",
     "commit": "cz",
-    "format": "prettier --write"
+    "format": "prettier --write",
+    "pre-release:patch": "npm version patch && git push --follow-tags",
+    "pre-release:minor": "npm version minor && git push --follow-tags",
+    "pre-release:major": "npm version major && git push --follow-tags",
+    "publish": "npm run build:admin-kit && cd dist/admin-kit && npm publish --access public"
   },
   "private": true,
   "dependencies": {
