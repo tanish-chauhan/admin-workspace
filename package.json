@@ -1,6 +1,6 @@
 {
   "name": "admin-workspace",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,9 +12,9 @@
     "lint": "ng lint",
     "commit": "cz",
     "format": "prettier --write",
-    "pre-release:patch": "npm version patch && git push --follow-tags",
-    "pre-release:minor": "npm version minor && git push --follow-tags",
-    "pre-release:major": "npm version major && git push --follow-tags",
+    "prerelease:patch": "npm version patch && git push --follow-tags",
+    "prerelease:minor": "npm version minor && git push --follow-tags",
+    "prerelease:major": "npm version major && git push --follow-tags",
     "publish": "npm run build:admin-kit && cd dist/admin-kit && npm publish --access public"
   },
   "private": true,
