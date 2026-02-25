@@ -1,25 +1,84 @@
-# AdminKit
+# Admin Kit
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+Admin Kit provides a reusable design system foundation for Angular admin dashboards.
+It includes a token-based theme architecture and multiple domain-ready themes:
 
-## Code scaffolding
+- `light`
+- `dark`
+- `banking`
+- `healthcare`
+- `ecommerce`
+- `education`
+- `government`
 
-Run `ng generate component component-name --project admin-kit` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project admin-kit`.
+## Install and use
 
-> Note: Don't forget to add `--project admin-kit` or else it will be added to the default project in your `angular.json` file.
+1. Build/publish the package.
+2. Import theme styles in your global stylesheet:
 
-## Build
+```scss
+@use '@tanish-chauhan/admin-kit/src/lib/theme/theme';
+```
 
-Run `ng build admin-kit` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Initialize and apply a theme in app bootstrap (example in `AppComponent`):
 
-## Publishing
+```ts
+import { Component, OnInit } from '@angular/core';
+import { TnThemeService } from '@tanish-chauhan/admin-kit';
 
-After building your library with `ng build admin-kit`, go to the dist folder `cd dist/admin-kit` and run `npm publish`.
+@Component({
+  selector: 'app-root',
+  template: `<button (click)="switchTheme()">Switch Theme</button>`,
+})
+export class AppComponent implements OnInit {
+  constructor(private readonly themeService: TnThemeService) {}
 
-## Running unit tests
+  ngOnInit(): void {
+    this.themeService.initialize({
+      defaultTheme: 'banking',
+      persistTheme: true,
+    });
+  }
 
-Run `ng test admin-kit` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  switchTheme(): void {
+    this.themeService.cycleTheme();
+  }
+}
+```
 
-## Further help
+4. Use the reusable layout components:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```ts
+import { Component } from '@angular/core';
+import { AdminKitComponent, TnSidebarItem } from '@tanish-chauhan/admin-kit';
+
+@Component({
+  selector: 'app-admin-page',
+  standalone: true,
+  imports: [AdminKitComponent],
+  template: `
+    <tn-admin-kit [title]="'Operations'" [brand]="'Acme Admin'" [menuItems]="menuItems">
+      <button topnav-actions type="button">Profile</button>
+      <section>Page content goes here...</section>
+    </tn-admin-kit>
+  `,
+})
+export class AdminPageComponent {
+  menuItems: TnSidebarItem[] = [
+    { label: 'Overview', route: '/overview', icon: '🏠', active: true },
+    { label: 'Reports', route: '/reports', icon: '📊' },
+    { label: 'Users', route: '/users', icon: '👥', badge: 6 },
+  ];
+}
+```
+
+## Design system docs
+
+Full theme/token documentation:
+
+- `docs/design-system.md`
+
+## Development scripts
+
+- `ng build admin-kit`
+- `ng test admin-kit`

@@ -1,4 +1,27 @@
 [data-tn-theme='dark'] {
-  --tn-bg-color: #111827;
-  --tn-text-color: #f9fafb;
+  --tn-color-primary: #60a5fa;
+  --tn-color-primary-contrast: #0b1220;
+  --tn-color-secondary: #34d399;
+  --tn-color-accent: #c084fc;
+  --tn-color-success: #4ade80;
+  --tn-color-warning: #fbbf24;
+  --tn-color-danger: #f87171;
+  --tn-color-info: #38bdf8;
+
+  --tn-bg-canvas: #0f172a;
+  --tn-bg-surface: #111827;
+  --tn-bg-surface-muted: #1f2937;
+  --tn-text-primary: #f8fafc;
+  --tn-text-secondary: #cbd5e1;
+  --tn-text-inverse: #0b1220;
+  --tn-border-color: #334155;
+  --tn-focus-ring: rgba(96, 165, 250, 0.45);
+
+  --tn-sidebar-bg: #0b1220;
+  --tn-sidebar-text: #e2e8f0;
+  --tn-sidebar-active-bg: rgba(96, 165, 250, 0.2);
+  --tn-card-bg: #111827;
+  --tn-card-border: #334155;
+  --tn-card-shadow: 0 8px 20px rgba(2, 6, 23, 0.35);
+  --tn-table-header-bg: #1e293b;
 }
