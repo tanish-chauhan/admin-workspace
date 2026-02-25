@@ -28,19 +28,13 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/admin-kit/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "projects/admin-kit/**/*.ts",
-              "projects/admin-kit/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/admin-kit/**/*.ts", "projects/admin-kit/**/*.html"]
           }
         }
       }
@@ -48,8 +42,6 @@
   },
   "cli": {
     "analytics": false,
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }
