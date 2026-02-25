@@ -1,7 +1,7 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/admin-kit",
-  "assets": ["src/lib/theme/**/*", "docs/**/*", "README.md"],
+  "assets": ["src/lib/theme/**/*.scss", "docs/**/*", "README.md"],
   "lib": {
     "entryFile": "src/public-api.ts"
   }
